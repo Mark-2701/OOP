@@ -161,6 +161,7 @@
     <ClInclude Include="shop\Monitor.h" />
     <ClInclude Include="shop\Periphery.h" />
     <ClInclude Include="shop\Product.h" />
+    <ClInclude Include="shop\vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

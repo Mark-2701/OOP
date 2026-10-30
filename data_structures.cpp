@@ -1,6 +1,7 @@
 #include "data_structures.h"
 #include "data_structures/linked_list.h"
 #include <iostream>
+#include "shop/vector2.h"
 
 template<typename T>   // Шаблонними можуть бути функції та типи (класи, структури)
 void print(T arg) {    // Шаблон вводить "змінну" для типу, традиційно "Т"
@@ -26,45 +27,30 @@ struct fraction {      // Для типів (наприклад, структу�
     }
 };                 
 
+void vector_demo() { 
+    std::cout << "=== Demonstrating Template Vector2T ===" << std::endl;
+
+    Vector2T<int> v1(3, 4, "VectorA");
+    std::cout << v1.toString() << std::endl;
+
+    Vector2T<double> v2(1.5, 2.71, "VectorB");
+    std::cout << v2.toString() << std::endl;
+
+    Vector2T<float> v3(10.5f, -3.2f);
+    std::cout << v3.toString() << std::endl;
+}
+
 void data_structures() {
-    std::cout << "Data structures" << std::endl;
+    std::cout << "data structures" << std::endl;
+
+   
     LinkedList<int>* intList = new LinkedList<int>();
     intList->add(10);
     intList->add(20);
-    intList->add(30);
     intList->print();
-    intList->insertBefore(5, 0);
-    intList->print();
-    intList->insertBefore(15, 2);
-    intList->print();
-    std::cout << "removed: " << intList->remove(0) << std::endl;
-    intList->print();
-    std::cout << "removed: " << intList->remove(3) << std::endl;
-    intList->print();
-    std::cout << "removed: " << intList->remove(0) << std::endl;
-    intList->print();
-    std::cout << "removed: " << intList->remove(0) << std::endl;
-    intList->print();
-    std::cout << "removed: " << intList->remove(0) << std::endl;
-    intList->print();
+
+    vector_demo();
 }
-
-void data_structures_t() {
-	std::cout << "Templates" << std::endl;
-    print("Template function demo");  // ... і для кожного конкретного вжитку
-    print(42);                        // створює копію шаблона під даний "Т"
-    print(true);                      // Тобто у підсумку буде кілька (5) різних
-    print('A');                       // функцій під кожен тип окремо, за потреби
-    print<short>(42);                 // прямо вказати тип додаємо <тип>
-
-    fraction<int> f1{ 1, 2 };         // Для різних конкретних типів також
-    fraction<float> f2{ 1.5, 2.5 };   // буде створено різні структури за 
-    fraction<short> f3{ 2, 3 };       // єдиним шаблоном
-    f1.print(); std::cout << std::endl;
-    f2.print(); std::cout << std::endl;
-    f3.print(); std::cout << std::endl;
-}
-
 /*
 Структури даних та шаблонне програмування
 1. Структури даних - типові способи організації даних,
